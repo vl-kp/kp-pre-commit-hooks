@@ -258,7 +258,7 @@ class ServiceInstanceConfigValidator:
                 self.enrich_error_message(error)
                 for error in self.validator.iter_errors(self.service_instance_config.configuration)
             ]
-            print("err={}".format(error))
+            print("err={}".format(raw_validation_errors))
             validation_errors = [error for error in raw_validation_errors if not self.is_ignored_error(error)]
             schema_validation_errors = list(self.iter_schema_validation_errors())
             return validation_errors + schema_validation_errors
